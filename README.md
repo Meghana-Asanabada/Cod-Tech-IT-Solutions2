@@ -1,4 +1,4 @@
-asic Calculator Documentation
+Basic Calculator Documentation
 Overview
 BasicCalculator is a simple console-based calculator program implemented in Java. It allows users to perform basic arithmetic operations such as addition, subtraction, multiplication, and division.
 
