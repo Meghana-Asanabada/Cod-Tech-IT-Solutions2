@@ -1,0 +1,81 @@
+import java.util.Scanner;
+
+public class BasicCalculator {
+    public static void main(String[] args) {
+        // Create a Scanner object to take input from the user
+        Scanner scanner = new Scanner(System.in);
+
+        // Loop to continuously display the calculator menu until the user chooses to exit
+        while (true) {
+            System.out.println("Simple Calculator");
+            System.out.println("1. Addition");
+            System.out.println("2. Subtraction");
+            System.out.println("3. Multiplication");
+            System.out.println("4. Division");
+            System.out.println("5. Exit");
+
+            // Prompt the user to choose an operation
+            System.out.print("Choose operation (1-5): ");
+            int choice = scanner.nextInt();
+
+            // Check if the user wants to exit the calculator
+            if (choice == 5) {
+                System.out.println("Exiting calculator. Goodbye!");
+                break; // Exit the loop and end the program
+            }
+
+            // Prompt the user to enter two numbers
+            System.out.print("Enter first number: ");
+            double num1 = scanner.nextDouble();
+            System.out.print("Enter second number: ");
+            double num2 = scanner.nextDouble();
+
+            // Perform the selected operation based on user's choice
+            switch (choice) {
+                case 1:
+                    System.out.println("Result: " + add(num1, num2));
+                    break;
+                case 2:
+                    System.out.println("Result: " + subtract(num1, num2));
+                    break;
+                case 3:
+                    System.out.println("Result: " + multiply(num1, num2));
+                    break;
+                case 4:
+                    // Check if the second number is not zero to avoid division by zero
+                    if (num2 != 0) {
+                        System.out.println("Result: " + divide(num1, num2));
+                    } else {
+                        System.out.println("Cannot divide by zero. Please enter a non-zero divisor.");
+                    }
+                    break;
+                default:
+                    // If the user enters an invalid choice, display an error message
+                    System.out.println("Invalid choice. Please choose a valid operation.");
+            }
+        }
+
+        // Close the Scanner object to release resources
+        scanner.close();
+    }
+
+    // Method to add two numbers
+    private static double add(double num1, double num2) {
+        return num1 + num2;
+    }
+
+    // Method to subtract one number from another
+    private static double subtract(double num1, double num2) {
+        return num1 - num2;
+    }
+
+    // Method to multiply two numbers
+    private static double multiply(double num1, double num2) {
+        return num1 * num2;
+    }
+
+    // Method to divide one number by another
+    private static double divide(double num1, double num2) {
+        return num1 / num2;
+    }
+}
